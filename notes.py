@@ -11,24 +11,25 @@ def add_note():
         notes.append((title, note))
         new_window.destroy()
         update_list()
-        
+
     new_window = tk.Toplevel(root)
     new_window.title("Add Note")
     new_window.geometry("400x400")
+    new_window.config(bg='#333')
 
-    title_label = tk.Label(new_window, text="Title:")
+    title_label = tk.Label(new_window, text="Title:", bg='#333', fg='white')
     title_label.pack(pady=10)
 
-    title_entry = tk.Entry(new_window)
+    title_entry = tk.Entry(new_window, bg='#333', fg='white', insertbackground='white')
     title_entry.pack(pady=10)
 
-    text_label = tk.Label(new_window, text="Note:")
+    text_label = tk.Label(new_window, text="Note:", bg='#333', fg='white')
     text_label.pack(pady=10)
 
-    text = tk.Text(new_window, height=10, width=30)
+    text = tk.Text(new_window, height=10, width=30, bg='#333', fg='white', insertbackground='white')
     text.pack(pady=10)
 
-    save_button = tk.Button(new_window, text="Save Note", command=save_note)
+    save_button = tk.Button(new_window, text="Save Note", command=save_note, bg='#AA4499', fg='white')
     save_button.pack(pady=10)
 
 def delete_note():
@@ -47,14 +48,15 @@ def update_list():
 root = tk.Tk()
 root.title("Note Taking Application")
 root.geometry("400x400")
+root.config(bg='#333')
 
-add_button = tk.Button(root, text="Add Note", command=add_note)
+add_button = tk.Button(root, text="Add Note", command=add_note, bg='#AA4499', fg='white')
 add_button.pack(pady=10)
 
-listbox = tk.Listbox(root)
+listbox = tk.Listbox(root, bg='#333', fg='white')
 listbox.pack(pady=10)
 
-delete_button = tk.Button(root, text="Delete Note", command=delete_note)
+delete_button = tk.Button(root, text="Delete Note", command=delete_note, bg='#AA4499', fg='white')
 delete_button.pack(pady=10)
 
 root.mainloop()
